@@ -5,13 +5,11 @@ before_deploy:
   - go get github.com/mitchellh/gox
   - gox -build-toolchain
   - gox -output "dist/{{.OS}}_{{.Arch}}_{{.Dir}}"
-  - export RELEASE_PKG_FILE=$(ls dist/*)
-  - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   provider: releases
   api_key:
     secure: pmO/MPymuFEsO4OLD/60xx9YRWO7KBo0A0F0klh+dHIKm7nVViIYtjeX4YHHCag8gtryJ/rBigGqSWGMxoBOx3qRbshz3ulb8xIlqKdaUmaW51WzUOQ5nR+ifBDOoWoqVlZ6w00KOVQ4G2wXc5YfuGWwmahmBbzUst5VvMPWiHwT9XAZbF+YBkBIq4GSCB+AUMFe5eqmfYmE1nApXR+6qbzdMb+arP5ckQ876J2Gw3qMBHo2WqZKUZfdfG0iKpp5v//MmusL5UJePEq22byJlu1StCE3AbVknLf+0KUDA8cHo214JjATM5ndsQRtE1yixfGt+jGaHvDWAXXmmTakGcp5d+BrtSqGzdozsn+rj4X69LzbL2o6UkI9cWFN1gGmRrDB52/N4g1vPAkHVb/Q00YSL9lkYBf5Hfip3Q7wPmPOKHrJ9OSQN4HwC5vkLwIXoVdQISTv0+pLlCg8+I3R2T9N79tpaB+7lS/KoO3U+fpcbNCx7XgqAoCIgtR4EEYZfRoqs2ezqnFdtBOaV7wRjLQtgVszcQxqwcwy6a9dex9xFby+pG1yNoSNw6QEVtwNbYh9GKG7eRAv+RHoDmLJHCu/h7xxTgOcDlUiX6azCIXV5Za/bqjups3tLxym3dwH7lLChDs62Ylrfqil0lbLkvtb/BG2mj6y89Nip/6DHMI=
   file_glob: true
-  file: "${RELEASE_PKG_FILE}"
+  file: "dist/*"
   on:
     tags: true
