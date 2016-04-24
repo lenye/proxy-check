@@ -4,11 +4,15 @@
 
 ### Using cli
 
-Simple usage:
+#### Simple usage
 ```
 proxylist.txt | proxy-check
 ```
-Args:
+By default it simply removes "bad" proxies from initial list
+Each proxy must be in format `schema://ip:port`
+Available schemas are `http`, `https`, `socks4` and `socks5`
+
+#### Args
 ```
 -check string
     Text that expected at target site (default "Aliexpress")
