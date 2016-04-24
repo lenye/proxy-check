@@ -1,12 +1,10 @@
 language: go
 env:
   - PATH=/home/travis/gopath/bin:$PATH
-before_install:
+before_deploy:
   - go get github.com/mitchellh/gox
   - gox -build-toolchain
-after_success:
   - gox -output "dist/{{.OS}}_{{.Arch}}_{{.Dir}}"
-before_deploy:
   - export RELEASE_PKG_FILE=$(ls dist/*)
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
