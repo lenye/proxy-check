@@ -2,6 +2,10 @@
 
 ## proxy-check: simple cli and library to check proxy lists
 
+### Install
+
+Simply download binary from [here](https://github.com/vintikzzz/proxy-check/releases)
+
 ### Using cli
 
 #### Simple usage
