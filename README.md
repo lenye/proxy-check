@@ -1,6 +1,6 @@
 [![Build Status](https://secure.travis-ci.org/vintikzzz/proxy-check.png?branch=master)](http://travis-ci.org/vintikzzz/proxy-check)
 
-## proxy-check: simple cli and library to check proxy list
+## proxy-check: simple cli and library to check proxy lists
 
 ### Using cli
 
@@ -24,7 +24,7 @@ Args:
 
 ### Credits
 
-hideme is (c) Tatarskiy Pavel, 2016
+proxy-check is (c) Tatarskiy Pavel, 2016
 
 ### License
 
